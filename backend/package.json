@@ -1,0 +1,53 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "OrderKiosk backend API and webhook receiver",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "npm run prisma:deploy && vitest run",
+    "test:watch": "vitest watch",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy"
+  },
+  "keywords": [
+    "fastify",
+    "woocommerce",
+    "webhooks",
+    "prisma"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/formbody": "^8.0.2",
+    "@fastify/helmet": "^13.0.2",
+    "@fastify/rate-limit": "^10.3.0",
+    "@fastify/sensible": "^6.0.4",
+    "@prisma/client": "^6.19.1",
+    "argon2": "^0.44.0",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "fastify-raw-body": "^5.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "p-queue": "^9.0.1",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.0.3",
+    "@types/supertest": "^6.0.3",
+    "pino-pretty": "^13.1.3",
+    "prisma": "^6.19.1",
+    "supertest": "^7.1.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}
